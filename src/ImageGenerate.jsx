@@ -1,7 +1,4 @@
 import { useState } from "react";
-
-import default_image from "./Assets/default_image.jpg";
-
 import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -13,7 +10,7 @@ export default function App() {
   const [imageData, setImageData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  // ✅ Works
+ 
 
 
   const handleChange = (e) => {
@@ -128,7 +125,7 @@ export default function App() {
         {imageData && (
           <div className="image-container">
             <img
-              src={imageData ? imageData : default_image}
+              src={imageData}
               alt="Generated from prompt" style={{height:"370px",width:"600px"}}
               className="rounded-lg" 
             />
