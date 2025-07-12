@@ -1,13 +1,15 @@
+
 .SearchBox {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius:6px;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  box-shadow: 0 10px 20px black;
+  background-color:rgb(229, 57, 117);
   width: 100%;
   max-width: 600px;
+  
 }
 
 form {
@@ -17,22 +19,15 @@ form {
   width: 100%;
   margin-top:-2rem;
   margin-bottom:0.5rem;
+  
 
 }
+
+
 .header{
-    color: black;
-    font-size :30px;
-    font-weight: 500;
+    color:whitesmoke;
     padding-bottom: 30px;
-    margin-top: -0.5rem;
-    
-    
-
-
-}
-.header span{
-    color:#DE1B89;
-    font-weight: 600;
+  
 }
 
 .MuiTextField-root {
@@ -43,8 +38,7 @@ form {
   padding: 12px 0;
   border-radius: 8px;
   font-weight: bold;
-  background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
-  color: white;
+  background: linear-gradient(45deg, 30%,90%);
   box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
   transition: transform 0.2s ease-in-out;
 }
@@ -61,7 +55,6 @@ form {
 }
 .image-container {
   margin-top: 20px;
-  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   max-width: 100%;

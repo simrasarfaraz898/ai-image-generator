@@ -6,22 +6,22 @@ import "./ImageGenerator.css";
 import CircularProgress from "@mui/material/CircularProgress"; 
 
 export default function App() {
-  const [prompt, setPrompt] = useState("");
+  const [state, setState] = useState("");
   const [imageData, setImageData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
  
 
 
-  const handleChange = (e) => {
-    setPrompt(e.target.value);
+  const handleChange= (e) => {
+    setState(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
      const HF_TOKEN = import.meta.env.VITE_REACT_APP_HF_TOKEN;
      console.log(HF_TOKEN);
-    console.log("Prompt submitted:", prompt);
+    console.log("Prompt submitted:", state);
     setImageData(null);
     setError(null);
     setLoading(true);
@@ -31,7 +31,7 @@ export default function App() {
         "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-dev";
 
       const requestBody = {
-        inputs: prompt,
+        inputs: state,
         response_format: "b64_json",
       };
 
@@ -79,26 +79,30 @@ export default function App() {
 
   return (
     <div className="">
-    <h1>Welcome to My project</h1>
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 font-inter">
       
       <div className="SearchBox">
         <h1 className="header">
-          Generate Image  by <span>using Huggingface API</span> 
+          Generate Image  by Ai
         </h1>
         <form onSubmit={handleSubmit}>
-          <TextField
+          <div className="field">
+                  <TextField
             id="prompt-input"
+            style={{background:"white",borderRadius:"3px"}}
             name="input"
             label="Enter your image prompt"
             variant="outlined"
+           
             required
-            value={prompt}
+            value={state}
             onChange={handleChange}
              fullWidth
             multiline 
             rows={2}
           />
+          </div>
+         
 
           <Button variant="contained" type="submit" disabled={loading}>
             {loading ? (
@@ -109,7 +113,7 @@ export default function App() {
           </Button>
 
           {error && (
-            <p className="text-red-600 text-center mt-2 p-2 bg-red-100 border border-red-400 rounded-md">
+            <p className="text-red-600 text-center mt-2 p-2 bg-red-100 border ">
               {error}
             </p>
           )}
@@ -118,7 +122,7 @@ export default function App() {
         {loading && (
           <div className="loading-container">
             <CircularProgress />
-            <p>Generating your image...</p>
+            <p style={{color:"black"}}>Generating your image...</p>
           </div>
         )}
 
@@ -133,7 +137,7 @@ export default function App() {
         )}
       </div>
     </div>
-    <i>make by @nikhil-kumar</i>
+  
     </div>
   );
 }

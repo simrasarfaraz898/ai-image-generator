@@ -3,10 +3,9 @@ import './App.css';
 function App() {
  
   return (
-   <>
-      
-      <SearchBox/>
-   </>
+   <div>
+       <SearchBox/>
+   </div>
   );
 }
 
