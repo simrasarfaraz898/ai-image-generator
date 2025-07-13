@@ -82,8 +82,8 @@ export default function App() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 font-inter">
       
       <div className="SearchBox">
-        <h1 className="header">
-          Generate Image  by Ai
+        <h2 className="header">
+        This is Simra website Generate image by ai
         </h1>
         <form onSubmit={handleSubmit}>
           <div className="field">
