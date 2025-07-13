@@ -84,7 +84,7 @@ export default function App() {
       <div className="SearchBox">
         <h2 className="header">
         This is Simra website Generate image by ai
-        </h1>
+        </h2>
         <form onSubmit={handleSubmit}>
           <div className="field">
                   <TextField
